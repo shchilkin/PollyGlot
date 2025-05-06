@@ -59,5 +59,14 @@ Make sure to deploy the output of `npm run build`
 - `build/server`
 - `build/client`
 
+## Screens
+<div align="center" style="">
+  <img src="public/screen-mobile.png"
+   alt="PollyGlot Mascot"
+   style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background-color: #f8f9fa;" 
+    width="350"
+    />
+</div>
+
 ## Useful links
 - 📖 [Remix docs](https://remix.run/docs)

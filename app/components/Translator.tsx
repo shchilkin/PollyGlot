@@ -42,7 +42,7 @@ export default function Translator({ actionState, translation, error }: Translat
           <button
             type="submit"
             disabled={actionState === 'submitting'}
-            className="rounded-lg w-full bg-polly-primary px-6 py-3 font-semibold text-polly-inc disabled:opacity-50"
+            className="rounded-lg w-full bg-polly-primary px-6 py-3 font-semibold text-polly-ink disabled:opacity-50"
           >
             {actionState === 'submitting' ? 'Translating…' : 'Translate'}
           </button>

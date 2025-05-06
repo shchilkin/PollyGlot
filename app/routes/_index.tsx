@@ -29,7 +29,7 @@ export async function action({ request }: ActionFunctionArgs) {
 
 	const response = await client.responses.create({
 		model: 'gpt-4o',
-		instructions: `You are a profeccional translator. Translate the following text into ${lang}. Return only the translation.`,
+		instructions: `You are a professional translator. Translate the following text into ${lang}. Return only the translation.`,
 		input: text,
 		temperature: 0.2,
 	});

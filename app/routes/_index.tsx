@@ -1,6 +1,6 @@
 import type { MetaFunction } from '@remix-run/node';
 import Header from '~/components/Header';
-import Test from '~/components/Test';
+import Translator from '~/components/Translator';
 
 export const meta: MetaFunction = () => {
 	return [
@@ -16,7 +16,7 @@ export default function Index() {
 	return (
 		<div className="flex flex-col h-screen items-center justify-top">
 			<Header />
-			<Test />
+			<Translator />
 		</div>
 	);
 }

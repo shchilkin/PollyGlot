@@ -1,0 +1,20 @@
+{
+    "name": "Node.js",
+    "image": "mcr.microsoft.com/devcontainers/javascript-node:22-bookworm",
+    "features": {},
+    "customizations": {
+      "vscode": {
+         "extensions":[
+      "eamodio.gitlens", // Git Blame
+      "gruntfuggly.todo-tree", // TODO highliter
+      "vincaslt.highlight-matching-tag", //Show matching tags
+      "dbaeumer.vscode-eslint", // ESLint
+      "esbenp.prettier-vscode", // Prettier
+      "bradlc.vscode-tailwindcss", // Tailwind autocomplete helper
+      "github.copilot"
+        ]
+      }
+    },
+      // Ensures 'npm install' (or yarn/pnpm install) runs automatically on container creation
+    "postCreateCommand": "npm install"
+  }

@@ -1,12 +1,34 @@
+<div align="center">
+  <img src="public/parrot.png" alt="PollyGlot Mascot" width="200" />
+</div>
+
 # PollyGlot
 
-PollyGlot is a solo project for the `Intro to AI Engineering` chapter from **"The AI Engineer Path"** on Scrimba. Made with Remix.
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9f26aa73-3dcd-482a-a8c5-b5e59322915b/deploy-status)](https://app.netlify.com/sites/nordic-pollyglot/deploys)
 
-- 📖 [Remix docs](https://remix.run/docs)
+PollyGlot is a solo project for the `Intro to AI Engineering` chapter from **"The AI Engineer Path"** on Scrimba. Made with Remix. Deployed on Netlify.
 
 ## Development
 
-Run the dev server:
+### API Key Setup
+
+This application requires an OpenAI API key to function properly. Follow these steps to set it up:
+
+1. **Get an API Key**:
+   - Create an account at [OpenAI's platform](https://platform.openai.com/)
+   - Navigate to the [API Keys section](https://platform.openai.com/api-keys)
+   - Create a new secret key
+   - Copy the key (note that you won't be able to see it again after this)
+
+2. **Set up the API Key**:
+
+   **Option 1**: Using a `.env` file:
+   ```sh
+   echo "OPENAI_API_KEY=your-api-key-here" > .env
+   ```
+
+
+### Run the dev server:
 
 ```shellscript
 npm run dev
@@ -37,10 +59,14 @@ Make sure to deploy the output of `npm run build`
 - `build/server`
 - `build/client`
 
-## Styling
+## Screens
+<div align="center" style="">
+  <img src="public/screen-mobile.png"
+   alt="PollyGlot Mascot"
+   style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background-color: #f8f9fa;" 
+    width="350"
+    />
+</div>
 
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever css framework you prefer. See the [Vite docs on css](https://vitejs.dev/guide/features.html#css) for more information.
-
-# Things to do
-
-- Desktop layout
+## Useful links
+- 📖 [Remix docs](https://remix.run/docs)

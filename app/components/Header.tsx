@@ -1,10 +1,8 @@
 const Header = () => {
 	return (
 		<header
-			className="
-        relative h-48 flex items-center gap-4 px-6
-        /* ↓ background image & behaviour ↓ */
-        bg-[url('/polly-nordic-bg.png')] bg-cover bg-center bg-no-repeat
+			className="w-full
+        relative h-48 flex items-center justify-center gap-4 px-6 bg-[url('/polly-nordic-bg.png')] bg-cover bg-center bg-no-repeat
       "
 		>
 			<div className="absolute inset-0 bg-slate-900/40" />

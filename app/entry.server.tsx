@@ -14,6 +14,8 @@ import { renderToPipeableStream } from 'react-dom/server';
 
 const ABORT_DELAY = 5_000;
 
+console.log(process.env.OPENAI_API_KEY);
+
 export default function handleRequest(
 	request: Request,
 	responseStatusCode: number,

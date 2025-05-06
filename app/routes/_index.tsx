@@ -1,11 +1,10 @@
-import { json, type ActionFunctionArgs, type MetaFunction } from '@remix-run/node';
+import { data, type ActionFunctionArgs, type MetaFunction } from '@remix-run/node';
 import { useActionData, useNavigation } from '@remix-run/react';
 import OpenAI from 'openai';
 import Header from '~/components/Header';
 import Translator from '~/components/Translator';
 
 type ActionData = { ok: true; translation: string } | { ok: false; error: string };
-
 
 export const meta: MetaFunction = () => [
 	{ title: 'PollyGlot' },
@@ -15,7 +14,6 @@ export const meta: MetaFunction = () => [
 	},
 ];
 
-/* ------------------------- server-side action ---------------------- */
 export async function action({ request }: ActionFunctionArgs) {
 	const client = new OpenAI({
 		apiKey: process.env['OPENAI_API_KEY'], // This is the default and can be omitted
@@ -26,7 +24,7 @@ export async function action({ request }: ActionFunctionArgs) {
 	const lang = formData.get('lang')?.toString() ?? '';
 
 	if (!text.trim() || !lang) {
-		return json({ ok: false, error: 'Please supply text and a target language' }, { status: 400 });
+		return data({ ok: false, error: 'Please supply text and a target language' }, { status: 400 });
 	}
 
 	const response = await client.responses.create({
@@ -38,23 +36,20 @@ export async function action({ request }: ActionFunctionArgs) {
 
 	const translation = response.output_text;
 
-	return json({ ok: true, translation });
+	return data({ ok: true, translation });
 }
 
-/* --------------------------- page component ------------------------ */
 export default function Index() {
 	const actionData = useActionData<ActionData>();
-	const navigation = useNavigation(); // "idle" | "submitting" | "loading"
+	const navigation = useNavigation();
 
 	return (
 		<div className="flex h-screen flex-col items-center">
 			<Header />
-
-			{/* pass the server reply + loading state down */}
 			<Translator
 				actionState={navigation.state}
-				translation={actionData?.translation }
-				error={actionData?.error}
+				translation={actionData?.ok ? actionData.translation : undefined}
+				error={actionData?.ok === false ? actionData.error : undefined}
 			/>
 		</div>
 	);

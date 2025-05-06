@@ -1,4 +1,5 @@
 # PollyGlot
+
 PollyGlot is a solo project for the `Intro to AI Engineering` chapter from **"The AI Engineer Path"** on Scrimba. Made with Remix.
 
 - 📖 [Remix docs](https://remix.run/docs)
